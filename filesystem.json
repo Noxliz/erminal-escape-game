@@ -1,0 +1,34 @@
+{
+    "fileSystem": {
+        "/home/user": {
+            "log.txt": "Journal système corrompu... [ERROR] 0x7F3A21\n[WARNING] Interface compromise\n[INFO] Tentative de connexion détectée",
+            "note.txt": "Je pense qu'il y a un moyen de s'échapper...\nCherchez dans /bin",
+            ".hidden": "Fichier caché sensible: clef=XR-2291"
+        },
+        "/etc": {
+            "passwd": "root:x:0:0:root:/root:/bin/bash\nuser:x:1000:1000:User,,,:/home/user:/bin/bash",
+            "hosts": "127.0.0.1\tlocalhost\n127.0.1.1\tsimulation"
+        },
+        "/bin": {
+            "unlock": "Exécutable verrouillé - utilisez 'run unlock'",
+            "decrypt": "Fonction de décryptage - usage: decrypt [fichier]"
+        },
+        "/var": {
+            "log": {
+                "auth.log": "Connexion root à 12:34:56\nTentative échouée à 12:35:01",
+                "syslog": "Système démarré\nInterface virtuelle activée"
+            }
+        }
+    },
+    "specialCommands": {
+        "run unlock": {
+            "action": "loadScene",
+            "target": "escapeScene",
+            "message": "Verrou désactivé... Chargement de la séquence d'évasion"
+        },
+        "decrypt .hidden": {
+            "action": "reveal",
+            "message": "Clé de sortie trouvée: XR-2291\nUtilisez 'run unlock' pour activer la séquence"
+        }
+    }
+}
